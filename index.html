@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golden Hour Rituals | Marine Luxury Skincare</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path fill='%23CC9966' d='M12 28c0-2 2-4 4-4s4 2 4 4-2 4-4 4-4-2-4-4zm28 0c0-2 2-4 4-4s4 2 4 4-2 4-4 4-4-2-4-4zm-20-8c0-3 2-6 5-7v-4c0-1 1-2 2-2s2 1 2 2v4c3 1 5 4 5 7 0 6-4 10-9 10s-9-4-9-10zm18 0c0-3 2-6 5-7v-4c0-1 1-2 2-2s2 1 2 2v4c3 1 5 4 5 7 0 6-4 10-9 10s-9-4-9-10z'/></svg>">
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path fill='%23CC9966' d='M12 28c0-2 2-4 4-4s4 2 4 4-2 4-4 4-4-2-4-4zm28 0c0-2 2-4 4-4s4 2 4 4-2 4-4 4-4-2-4-4zm-20-8c0-3 2-6 5-7v-4c0-1 1-2 2-2s2 1 2 2v4c3 1 5 4 5 7 0 6-4 10-9 10s-9-4-9-10zm18 0c0-3 2-6 5-7v-4c0-1 1-2 2-2s2 1 2 2v4c3 1 5 4 5 7 0 6-4 10-9 10s-9-4-9-10z'/></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path fill='%23CC9966' d='M12 28c0-2 2-4 4-4s4 2 4 4-2 4-4 4-4-2-4-4zm28 0c0-2 2-4 4-4s4 2 4 4-2 4-4 4-4-2-4-4zm-20-8c0-3 2-6 5-7v-4c0-1 1-2 2-2s2 1 2 2v4c3 1 5 4 5 7 0 6-4 10-9 10s-9-4-9-10zm18 0c0-3 2-6 5-7v-4c0-1 1-2 2-2s2 1 2 2v4c3 1 5 4 5 7 0 6-4 10-9 10s-9-4-9-10z'/></svg>">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -57,6 +62,25 @@
             color: #2C2926;
         }
 
+        /* Text Visibility Improvements */
+        p, .font-sans {
+            color: #1a1a1a !important;
+            font-weight: 500 !important;
+            text-shadow: none !important;
+        }
+
+        /* Card Title Enhancement */
+        h3.font-serif {
+            color: #0F2C3E !important;
+            font-weight: 600 !important;
+        }
+
+        /* Modal Content Text Enhancement */
+        #modal-content p, #modal-content li {
+            color: #2C3E50 !important;
+            line-height: 1.8;
+        }
+
         /* 1. Pro Shadows for Glass Cards - Zen Polish */
         .glass-card {
             background: rgba(255, 255, 255, 0.25);
@@ -69,6 +93,8 @@
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.4);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateZ(0);
+            will-change: transform;
         }
 
         .glass-card:hover {
@@ -159,9 +185,22 @@
             padding: 1rem;
         }
 
+        /* تحسين جذري لقراءة المودال - Milk Glass Effect */
         .modal-container {
+            /* خلفية كريمية شبه معتمة (95%) لضمان القراءة الممتازة */
+            background: rgba(253, 252, 250, 0.96) !important; 
+            /* بلور قوي جداً لعزل الخلفية تماماً */
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(20px);
+            
+            /* حدود ناعمة وتظليل عميق */
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 25px 50px -12px rgba(15, 44, 62, 0.25);
+            
+            /* تحسين السكرول */
             scrollbar-width: thin;
-            scrollbar-color: #CC9966 #FFF9F2;
+            scrollbar-color: #CC9966 transparent;
+            border-radius: 24px !important;
         }
 
         .modal-container::-webkit-scrollbar {
@@ -169,7 +208,7 @@
         }
 
         .modal-container::-webkit-scrollbar-track {
-            background: #FFF9F2;
+            background: transparent;
             border-radius: 10px;
         }
 
@@ -180,6 +219,45 @@
 
         .modal-container::-webkit-scrollbar-thumb:hover {
             background: #B8823D;
+        }
+
+        /* تحسين الخطوط داخل المودال للقراءة الطويلة */
+        #modal-content p, #modal-content li {
+            color: #2D3748 !important; /* رمادي غامق مريح للعين */
+            line-height: 1.8; /* مسافة واسعة بين السطور */
+            font-weight: 500;
+            font-size: 0.95rem; /* حجم خط مثالي للقراءة */
+        }
+        
+        /* تنسيق خاص لقائمة الخطوات */
+        .ritual-step-box {
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(230, 194, 191, 0.3); /* Rose Quartz light border */
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            transition: all 0.2s ease;
+        }
+        
+        .ritual-step-box:hover {
+            background-color: rgba(255, 255, 255, 1);
+            border-color: #CC9966;
+            transform: translateX(4px);
+        }
+
+        /* Custom Scrollbar Styling */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(204, 153, 102, 0.1);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #CC9966; /* Gold Hour */
+            border-radius: 20px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background-color: #B8823D;
         }
 
         /* 5. Animations - Centralized */
@@ -206,10 +284,24 @@
             animation: modalSlideIn 0.4s ease-out;
         }
 
+        /* Pulse Gold Animation for CTA Buttons */
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(204, 153, 102, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(204, 153, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(204, 153, 102, 0); }
+        }
+
+        .shop-btn-primary {
+            animation: pulse-gold 2s infinite;
+        }
+
         #modal-backdrop {
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s ease-out;
+            transition: opacity 0.3s ease-out;
+            will-change: opacity;
+            background: rgba(15, 25, 35, 0.7);
+            backdrop-filter: blur(4px);
         }
 
         #modal-backdrop.show-modal {
@@ -218,15 +310,16 @@
         }
 
         #product-modal {
-            transform: scale(0.95) translateY(20px);
+            transition: opacity 0.3s ease-out, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            will-change: opacity, transform;
             opacity: 0;
+            transform: scale(0.95);
             visibility: hidden;
-            transition: all 0.3s ease-out;
         }
 
         #product-modal.show-modal {
-            transform: scale(1) translateY(0);
             opacity: 1;
+            transform: scale(1);
             visibility: visible;
         }
 
@@ -253,78 +346,130 @@
             overflow: hidden;
         }
 
+        /* --- Footer Colors Fix --- */
+        footer {
+            background-color: #0F2C3E !important;
+            position: relative;
+            z-index: 20;
+            padding-top: 3rem;
+            padding-bottom: 6rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Regular Text Styling */
+        footer p {
+            color: #FAF5EF !important; 
+            opacity: 0.8;
+            font-weight: 500 !important;
+        }
+
+        /* Copyright Text Styling */
+        footer p.text-\[9px\] {
+            color: #CC9966 !important;
+            opacity: 1 !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.1em;
+        }
+
+        /* Links and Icons */
+        footer a, footer i {
+            color: #FAF5EF !important;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover, footer a:hover i {
+            color: #CC9966 !important;
+        }
+        
+        /* Headings */
+        footer h3 {
+            color: #CC9966 !important;
+        }
+
         /* 6. Product Badge */
         .product-badge {
             position: absolute;
-            top: 2rem;
-            right: 2rem;
-            background: linear-gradient(135deg, #CC9966, #E0B080);
-            color: white;
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 600;
+            top: 12px;
+            left: 12px;
+            right: auto;
+            background: rgba(255, 255, 255, 0.9);
+            color: #CC9966;
+            border: 1px solid #CC9966;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 700;
             letter-spacing: 0.05em;
             text-transform: uppercase;
-            z-index: 10;
-            box-shadow: 0 4px 12px rgba(204, 153, 102, 0.3);
-        }
-
-        /* 7. Close Button Mobile Enhancement */
-        #close-modal {
-            position: relative;
-            z-index: 60;
-        }
-
-        #close-modal:hover {
-            background-color: rgba(255, 255, 255, 0.5) !important;
+            z-index: 20;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            backdrop-filter: blur(4px);
         }
 
         /* 8. Mobile Optimizations */
-        @media (max-width: 768px) {
-            #close-modal {
-                position: sticky;
-                top: 0;
-                margin-bottom: 1rem;
-            }
+        #shop-anchor {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: rgba(250, 245, 239, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
 
+        @media (max-width: 768px) {
+            /* Modal Container Mobile Styles */
             .modal-container {
-                max-height: 95vh;
-                border-radius: 16px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100% !important;
+                height: 100% !important;
+                max-height: 100% !important;
+                border-radius: 0 !important;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                margin: 0 !important;
+                background: #FAF5EF !important;
+                display: block !important;
             }
 
             #modal-content {
                 padding: 1.5rem;
-            }
-
-            .modal-content-wrapper {
-                display: grid;
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .purchase-links-container {
-                position: sticky;
-                bottom: 0;
-                background: linear-gradient(to top, rgba(250, 245, 239, 0.98), rgba(250, 245, 239, 0.9));
-                padding: 1.5rem 1rem 1rem;
-                border-top: 1px solid rgba(15, 44, 62, 0.1);
-                z-index: 20;
-                margin: 0 -1.5rem -1.5rem -1.5rem;
-                border-radius: 0 0 16px 16px;
-            }
-
-            .purchase-links-container .flex {
+                min-height: 100%;
+                display: flex;
                 flex-direction: column;
             }
 
-            .purchase-links-container a {
-                width: 100%;
-                justify-content: center;
+            .modal-content-wrapper {
+                display: block !important;
+                flex-grow: 1;
             }
 
-            .gallery-section {
-                order: -1;
+            /* Sticky Purchase Container */
+            .purchase-sticky-container {
+                position: sticky !important;
+                bottom: 0 !important;
+                z-index: 50;
+                margin-left: -1.5rem !important;
+                margin-right: -1.5rem !important;
+                padding: 12px 20px 20px 20px !important;
+                background: white !important;
+                border-top: 1px solid rgba(15, 44, 62, 0.1);
+                box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+            }
+            
+            /* Close Button Styling */
+            #close-modal {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                z-index: 60;
+                background: rgba(255,255,255,0.9);
             }
         }
 
@@ -346,7 +491,7 @@
 </head>
 <body class="antialiased selection:bg-rose-quartz selection:text-marine-depths">
 
-    <header class="fixed top-0 w-full z-50 glass-card !rounded-none !border-l-0 !border-r-0 !bg-white/10 px-6 py-4 flex justify-between items-center">
+    <header class="fixed top-0 w-full z-50 glass-card !rounded-none !border-l-0 !border-r-0 !bg-white/10 px-6 py-4 flex justify-between items-center transition-transform duration-300">
         <a href="index.html" class="flex items-center hover:opacity-80 transition-opacity group">
             <div class="h-14 flex items-center justify-center">
                 <span class="font-serif text-3xl font-bold text-gold-hour tracking-widest" style="text-shadow: 0 2px 4px rgba(204, 153, 102, 0.3);">
@@ -408,7 +553,7 @@
         </div>
     </section>
 
-    <div id="shop-anchor" class="sticky top-20 z-30 py-6 overflow-hidden">
+    <div id="shop-anchor" class="py-6 overflow-hidden">
         <div class="flex gap-4 overflow-x-auto px-4 md:justify-center no-scrollbar pb-2" id="category-container">
             <button class="filter-btn active-filter glass-card !py-2 !px-6 whitespace-nowrap text-sm font-medium hover:!bg-white/40 text-luxury-charcoal" data-filter="all">All Rituals</button>
             <button class="filter-btn glass-card !py-2 !px-6 whitespace-nowrap text-sm font-medium hover:!bg-white/40 text-luxury-charcoal" data-filter="Marine Beauty Secrets 🌊">Marine Beauty 🌊</button>
@@ -431,25 +576,25 @@
 
     </main>
 
-    <footer class="relative z-20 mt-12 border-t border-white/10 bg-marine-depths text-skin-glow py-8">
+    <footer class="relative z-20 mt-12 border-t border-white/10 bg-marine-depths text-skin-glow py-12">
         <div class="container mx-auto max-w-4xl text-center space-y-6">
-            <div class="flex justify-center items-center gap-4 opacity-80 hover:opacity-100 transition-opacity">
+            <div class="flex justify-center items-center gap-4 opacity-90 hover:opacity-100 transition-opacity">
                 <span class="h-px w-12 bg-gold-hour"></span>
-                <h3 class="font-serif text-xl tracking-[0.2em] text-gold-hour uppercase">Golden Hour Rituals</h3>
+                <h3 class="font-serif text-xl tracking-[0.2em] text-gold-hour uppercase font-bold">Golden Hour Rituals</h3>
                 <span class="h-px w-12 bg-gold-hour"></span>
             </div>
             
-            <p class="font-sans text-[10px] leading-relaxed max-w-xl mx-auto text-white/60">
+            <p class="font-sans text-xs leading-relaxed max-w-xl mx-auto text-white/70 font-semibold">
                 Golden Hour Rituals is a participant in the Amazon Services LLC Associates Program. As an Amazon Associate, we earn from qualifying purchases.
             </p>
 
             <div class="flex justify-center gap-6">
-                <a href="https://www.pinterest.com/GoldenHourGlowTips/" target="_blank" class="text-white/80 hover:text-rose-quartz transition-colors flex items-center gap-2 font-serif italic tracking-wide">
+                <a href="https://www.pinterest.com/GoldenHourGlowTips/" target="_blank" class="text-white/80 hover:text-rose-quartz transition-colors flex items-center gap-2 font-serif italic tracking-wide font-bold">
                     <i class="ph ph-pinterest-logo text-xl"></i> Follow on Pinterest
                 </a>
             </div>
             
-            <p class="font-sans text-[10px] tracking-widest text-white/40">© 2025 GOLDEN HOUR RITUALS.</p>
+            <p class="font-sans text-[9px] tracking-widest text-white/50 font-bold">© 2025 GOLDEN HOUR RITUALS. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 
@@ -464,10 +609,12 @@
         <div class="modal-container glass-card w-full max-w-4xl max-h-[90vh] overflow-y-auto relative !rounded-2xl">
             
             <!-- Close Button - Sticky on Mobile -->
-            <button id="close-modal" aria-label="Close product details" 
-                    class="fixed md:absolute md:top-6 md:right-6 bottom-auto top-6 right-6 z-60 p-2 rounded-full bg-white/20 hover:bg-white/40 transition-all duration-300 hover:scale-110 md:z-10">
-                <i class="ph ph-x text-2xl text-luxury-charcoal"></i>
-            </button>
+            <div class="sticky top-0 right-0 w-full flex justify-end p-4 z-50 pointer-events-none">
+                <button id="close-modal" aria-label="Close" 
+                        class="pointer-events-auto bg-white/80 hover:bg-marine-depths text-marine-depths hover:text-white p-2 rounded-full shadow-lg border border-marine-depths/10 transition-all duration-300 hover:rotate-90">
+                    <i class="ph ph-x text-2xl font-bold"></i>
+                </button>
+            </div>
 
             <!-- Modal Content -->
             <div id="modal-content" class="p-8 md:p-12">
