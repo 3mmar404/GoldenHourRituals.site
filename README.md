@@ -14,7 +14,8 @@ A marine‑luxury skincare storefront — a curated, affiliate‑powered showcas
 
 **[🌊 View Live Demo](https://3mmar404.github.io/GoldenHourRituals.site/)**
 
-![Golden Hour Rituals preview](./preview.jpg)
+![Golden Hour Rituals preview](./preview.png)
+![Golden Hour Rituals preview](./preview1.png)
 
 </div>
 
